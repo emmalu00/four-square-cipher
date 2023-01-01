@@ -88,27 +88,4 @@ public class IO
         System.out.println();
     }
 
-    /**
-    * Prints an error message
-    * @param error - error message
-    */
-    public void printError(String error)
-    {
-        System.out.println(error);
-    }
-
-    /**
-    * Indicates whether a string has an even amount of characters.
-    * @param messgae - message
-    * @return true if message has even amount of characters, false otherwise
-    */
-    public boolean evenLetters(String message)
-    {
-        if (message.length() % 2 == 0)
-        {
-            return true;
-        }
-        return false;
-    }
-
 } // end IO class
