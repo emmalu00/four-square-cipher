@@ -8,7 +8,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Project8 {
+public class CipherMain {
     public static void main(String[] args)
     {
         IO view = new IO();
@@ -31,4 +31,4 @@ public class Project8 {
         }
 
     }
-} // end Project 8 class
+}

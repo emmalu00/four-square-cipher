@@ -17,7 +17,7 @@ public class Cipher
     */
     public Cipher(String key1, String key2)
     {
-        plain1 = new Square();
+        plain1 = new Square(false);
         plain2 = new Square(true);
         cipher1 = new Square(key1);
         cipher2 = new Square(key2);
@@ -35,7 +35,6 @@ public class Cipher
         String encrypted = "";
         for (int i = 0; i < (message.length() / 2); ++i)
         {
-            boolean noSpace = true;
             char letter1 = message.charAt(2*i);
             char letter2 = message.charAt((2*i) + 1);
             int[] char1 = plain1.getPos(letter1);
@@ -73,7 +72,6 @@ public class Cipher
     */
     public String decrypt(String message)
     {
-       //message = message.toUpperCase();
         String decrypted = "";
         String encrypted = "";
         for (int i = 0; i < (message.length() / 2); ++i)
@@ -106,6 +104,6 @@ public class Cipher
             decrypted += message.charAt(message.length() - 1);
         }
         return decrypted;
-    } // end decrypt
+    } 
 
-} // end Cipher class
+} 

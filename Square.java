@@ -11,50 +11,23 @@ public class Square
     /**
     * Constructor used for filling plain1 and plain2 squares.
     */
-    public Square()
-    {
-        char letter = 'A';
-        for (int i = 0; i < matrix.length; ++i)
-        {
-            for (int j = 0; j < matrix[i].length; ++j)
-            {
-                /* 
-                if (letter == 'Q')
-                {
-                    letter++;
-                }
-                */
-                matrix[i][j] = letter;
-                letter++;
-            }
-        }  
-    }
-
     public Square(boolean backwards)
     {
         char letter = 'A';
-        if (backwards)
-        {
-            letter = 'Z';
-        }
+        if (backwards) { letter = 'Z';}
         for (int i = 0; i < matrix.length; ++i)
         {
             for (int j = 0; j < matrix[i].length; ++j)
             {
-                /* 
-                if (letter == 'Q')
-                {
-                    letter++;
-                }
-                */
                 matrix[i][j] = letter;
-                letter--;
+                if (backwards) { letter--; }
+                else letter ++;
             }
         }  
     }
 
     /**
-    * Constructor that takes in the key and fills cipher1 and cipher 2 squares.
+    * Constructor that takes in the key and fills cipher1 and cipher2 squares.
     */
     public Square(String key)
     {
@@ -67,17 +40,11 @@ public class Square
             {
                 if (key.length() <= (i * matrix.length) + j)
                 {
-                    while(strContains(key, letter)) //letter == 'Q' || 
-                    {
-                        letter++;
-                    }
+                    while(strContains(key, letter)) { letter++; }
                     matrix[i][j] = letter;
                     letter++;
                 }
-                else
-                {
-                    matrix[i][j] = key.charAt((i * matrix.length) + j);
-                }
+                else { matrix[i][j] = key.charAt((i * matrix.length) + j); }
             }
         }
     } 
@@ -91,7 +58,7 @@ public class Square
     public char getChar(int r, int c)
     {
         return matrix[r][c];
-    } // end getChar
+    }
 
     /**
     * Gets the matrix position of the passed in character
@@ -114,11 +81,10 @@ public class Square
                 }
             }
         }
-        // if not found
         pos[0] = -1;
         pos[1] = -1;
         return pos;
-    } // end getPos
+    }
     
     /**
     * Idenfities whether or not a string contains a character
@@ -132,13 +98,10 @@ public class Square
         Character.toUpperCase(c);
         for (int i = 0; i < s.length(); ++i)
         {
-            if (s.charAt(i) == c)
-            {
-                return true;
-            }
+            if (s.charAt(i) == c) {return true;}
         }
         return false;
-    } // end strContains
+    } 
 
     /**
     * Removes all duplicate letters in a string
@@ -157,6 +120,6 @@ public class Square
 			}
         }
         return newKey;
-    } // end removeDups
+    }
 
-} // end Sqaure class
+} 
