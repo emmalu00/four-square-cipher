@@ -6,11 +6,11 @@ This program uses object-oriented programming to implement a four-square cipher 
 2. Then, the user is asked whether they want to encrypt or decrypt. 
 3. If the user wants to encrypt, the user is asked for a message and then the encrypted result is displayed. If the user wants to decrypt, the user is asked for the original message and then the decrypted result is displayed. 
 
-* The user may enter messages with even or odd number of characters.
-* The user may enter messages with spaces, or uppercase or lowercase letters.
-* All spaces are removed from all input strings before encryption or decryption.
+_The user may enter messages with even or odd number of characters. The user may enter messages with spaces, or uppercase or lowercase letters. All spaces are removed from all input strings before encryption or decryption._
 
 ### Running the Program
+_It is recommended to clone this repository to your local machine through VS Code._
+
 The program must be compiled through the command line with the following statement:
 
 `javac CipherMain.java`
